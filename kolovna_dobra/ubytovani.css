@@ -1,0 +1,410 @@
+/* Proměnné s barvami a ostatními hodnotami */
+:root {
+    --primary: #8B4513;
+    --secondary: #F5F5DC;
+    --accent: #D2691E;
+    --text-dark: #333;
+    --text-light: #FFF;
+    --bg-light: #F9F9F9;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+    --transition: all 0.3s ease;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+/* Základní resetování a nastavení */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Nadpisy */
+.section-title {
+    color: var(--primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent);
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.hero-section {
+    height: 80vh;
+    min-height: 600px;
+    background-image: url('penzion-kolovna.webp'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+    margin-top: -80px; /* Kompenzace pro pevný navbar */
+    padding-top: 80px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: var(--spacing-lg);
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    font-family: 'Playfair Display', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-xl);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background: var(--accent);
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: var(--transition);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    min-width: 220px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    background: #C25E1C;
+}
+
+.cta-button:hover:before {
+    left: 100%;
+}
+
+.cta-button span {
+    margin-right: var(--spacing-sm);
+}
+
+/* Sekce služeb */
+.amenities-section {
+    padding: var(--spacing-xl) 0;
+    background-color: #fff;
+}
+
+.amenities-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.amenity-card {
+    background-color: var(--secondary);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xl);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.amenity-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.amenity-card i {
+    font-size: 3rem;
+    color: var(--accent);
+    margin-bottom: var(--spacing-md);
+}
+
+.amenity-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Sekce pokojů */
+.rooms-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--bg-light);
+}
+
+.room-card {
+    display: flex;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    margin-bottom: var(--spacing-xl);
+    transition: var(--transition);
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.room-image {
+    width: 40%;
+    position: relative;
+    overflow: hidden;
+}
+
+.room-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.room-card:hover .room-image img {
+    transform: scale(1.05);
+}
+
+.room-content {
+    width: 60%;
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+}
+
+.room-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.room-title {
+    font-size: 1.8rem;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.no-smoking {
+    display: flex;
+    align-items: center;
+    color: #e74c3c;
+    font-size: 0.9rem;
+}
+
+.no-smoking i {
+    margin-right: var(--spacing-sm);
+}
+
+.room-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+}
+
+.feature i {
+    font-size: 1.2rem;
+    color: var(--accent);
+    margin-right: var(--spacing-sm);
+    width: 24px;
+    text-align: center;
+}
+
+.feature h3 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.room-button {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: var(--text-light);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    width: fit-content;
+    align-self: flex-end;
+}
+
+.room-button:hover {
+    background-color: var(--accent);
+}
+
+.room-button span {
+    margin-right: var(--spacing-sm);
+}
+
+/* Responzivita */
+@media (max-width: 1024px) {
+    .amenities-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .room-card {
+        flex-direction: column;
+    }
+    
+    .room-image, .room-content {
+        width: 100%;
+    }
+    
+    .room-image {
+        height: 300px;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .amenities-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .room-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-section {
+        height: 70vh;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .cta-button {
+        padding: 14px 28px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .room-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .no-smoking {
+        margin-top: var(--spacing-sm);
+    }
+    
+    .room-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Animace */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.amenity-card, .room-card {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.amenities-container .amenity-card:nth-child(1) { animation-delay: 0.1s; }
+.amenities-container .amenity-card:nth-child(2) { animation-delay: 0.2s; }
+.amenities-container .amenity-card:nth-child(3) { animation-delay: 0.3s; }
+.amenities-container .amenity-card:nth-child(4) { animation-delay: 0.4s; }
+.amenities-container .amenity-card:nth-child(5) { animation-delay: 0.5s; }
+.amenities-container .amenity-card:nth-child(6) { animation-delay: 0.6s; }
+
+.rooms-section .room-card:nth-child(2) { animation-delay: 0.2s; }
+.rooms-section .room-card:nth-child(3) { animation-delay: 0.4s; }
+.rooms-section .room-card:nth-child(4) { animation-delay: 0.6s; }

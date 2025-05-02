@@ -1,0 +1,289 @@
+/* Proměnné s barvami a ostatními hodnotami */
+:root {
+    --primary: #8B4513;
+    --secondary: #F5F5DC;
+    --accent: #D2691E;
+    --text-dark: #333;
+    --text-light: #FFF;
+    --bg-light: #F9F9F9;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 4rem;
+    --transition: all 0.3s ease;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+/* Základní resetování a nastavení */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+main {
+    padding-top: 80px; 
+}
+
+
+.section-title{
+    color: var(--primary);
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    font-family: 'Playfair Display', serif;
+}
+
+.contact-section {
+    padding: var(--spacing-xl) 0;
+    background-color: #fff;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
+}
+
+.map-container {
+    flex: 1;
+    min-width: 300px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    height: 400px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-lg);
+    background-color: var(--secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.contact-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.contact-card i {
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-right: var(--spacing-md);
+    width: 24px;
+    text-align: center;
+}
+
+.contact-card span {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Sekce s provozní dobou */
+.hours-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--bg-light);
+}
+
+.hours-container {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.hours-card {
+    background-color: #fff;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    min-width: 200px;
+    flex: 1;
+    max-width: 300px;
+    transition: var(--transition);
+}
+
+.hours-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hours-card h3 {
+    color: var(--primary);
+    font-size: 1.3rem;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.hours-card p {
+    font-size: 1.2rem;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.hours-note {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    margin-top: var(--spacing-lg);
+    font-style: italic;
+}
+
+/* CTA sekce */
+.cta-section {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--primary);
+    color: var(--text-light);
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xl);
+    font-family: 'Playfair Display', serif;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    padding: 12px 30px;
+    background-color: var(--accent);
+    color: var(--text-light);
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    min-width: 180px;
+}
+
+.cta-button:hover {
+    background-color: #c25e1c;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+/* Responzivita */
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    
+    .section-title {
+        text-align: center;
+        font-size: 2rem;
+    }
+    
+    .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .hours-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hours-card {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .cta-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-card {
+        padding: var(--spacing-md);
+    }
+    
+    .contact-card i {
+        font-size: 1.2rem;
+    }
+    
+    .contact-card span {
+        font-size: 1rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .cta-button {
+        width: 100%;
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .cta-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Animace */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.contact-card, .hours-card, .cta-button {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.contact-cards .contact-card:nth-child(1) { animation-delay: 0.1s; }
+.contact-cards .contact-card:nth-child(2) { animation-delay: 0.2s; }
+.contact-cards .contact-card:nth-child(3) { animation-delay: 0.3s; }
+
+.hours-container .hours-card:nth-child(1) { animation-delay: 0.2s; }
+.hours-container .hours-card:nth-child(2) { animation-delay: 0.3s; }
+
+.cta-buttons .cta-button:nth-child(1) { animation-delay: 0.2s; }
+.cta-buttons .cta-button:nth-child(2) { animation-delay: 0.3s; }

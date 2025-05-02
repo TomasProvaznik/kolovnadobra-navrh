@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurace Kolovna - Dobrá jídla & příjemné prostředí</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="restaurace.css">
+    <script src="https://kit.fontawesome.com/9b018fc7a6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://duyn491kcolsw.cloudfront.net/files/0j/0j2/0j2n9u.ico?ph=04ddf70472">
+    <link rel="apple-touch-icon" href="https://duyn491kcolsw.cloudfront.net/files/0j/0j2/0j2n9u.ico?ph=04ddf70472">
+    <link rel="icon" href="https://duyn491kcolsw.cloudfront.net/files/0j/0j2/0j2n9u.ico?ph=04ddf70472">
+</head>
+<body>
+
+    <header class="header scrolled" id="navbar">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">KOLOVNA</div>
+                <nav class="navbar">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Úvod</a></li>
+                        <li><a href="restaurace.html" class="nav-link active">Restaurace</a></li>
+                        <li><a href="nase-pizza.html" class="nav-link">Naše pizza</a></li>
+                        <li><a href="ubytovani.html" class="nav-link">Ubytování</a></li>
+                        <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+                    </ul>
+                </nav>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="opening-hours">
+        <div class="container">
+            <div class="hours-wrapper">
+                <div class="hours-card fade-in">
+                    <h2 class="section-subtitle">Otevřeno!</h2>
+                    <div class="hours-block">
+                        <span class="day-label">Pondělí - Pátek</span>
+                        <div class="time-block">
+                            <h3>16:00 - 22:00</h3>
+                        </div>
+                    </div>
+                    <div class="hours-block">
+                        <span class="day-label">Sobota - Neděle</span>
+                        <div class="time-block">
+                            <h3>10:00 - 22:00</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-card fade-in delay-200">
+                    <h2>Zařídíme svatby, oslavy narozenin, trachty a jiné akce</h2>
+                    <h3>Akce (trachty, obědy zájezdů, rauty) mimo provozní dobu lze domluvit osobně, nebo na tel. čísle</h3>
+                    <h2 class="phone-highlight">+420 737 385 302</h2>
+                    <a href="kontakt.html" class="btn">Kontaktujte nás</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Jídelní lístek</h2>
+            </div>
+            <div class="book-container">
+                <div class="book fade-in">
+                    <div class="book-spine"></div>
+                    <div class="book-cover front">
+                        <div class="page page-1 active">
+                            <img src="jl1.webp" alt="Jídelní lístek - strana 1">
+                            <div class="page-control">
+                                <span class="page-number">1</span>
+                                <button class="turn-btn" onclick="turnPage()">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="page page-2">
+                            <img src="jl2.webp" alt="Jídelní lístek - strana 2">
+                            <div class="page-control">
+                                <button class="turn-btn back" onclick="turnPageBack()">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </button>
+                                <span class="page-number">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-info fade-in delay-300">
+                    <p>Prohlédněte si náš aktuální jídelní lístek. Pro zobrazení druhé strany klikněte na šipku vpravo.</p>
+                    <div class="menu-features">
+                        <div class="menu-feature">
+                            <i class="fa-solid fa-leaf"></i>
+                            <span>Čerstvé suroviny</span>
+                        </div>
+                        <div class="menu-feature">
+                            <i class="fa-solid fa-utensils"></i>
+                            <span>Tradiční pokrmy</span>
+                        </div>
+                        <div class="menu-feature">
+                            <i class="fa-solid fa-beer-mug-empty"></i>
+                            <span>Výběr kvalitních nápojů</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Naše restaurace</h2>
+            </div>
+            <div class="gallery-grid restaurant-gallery">
+                <div class="gallery-item" onclick="openGalleryLightbox(0)">
+                    <img src="restaurace.webp" alt="Restaurace - pohled 1">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGalleryLightbox(1)">
+                    <img src="restaurace2.webp" alt="Restaurace - pohled 2">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGalleryLightbox(2)">
+                    <img src="restaurace3.webp" alt="Restaurace - pohled 3">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGalleryLightbox(3)">
+                    <img src="restaurace4.webp" alt="Restaurace - pohled 4">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGalleryLightbox(4)">
+                    <img src="restaurace5.webp" alt="Restaurace - pohled 5">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openGalleryLightbox(5)">
+                    <img src="restaurace6.webp" alt="Restaurace - pohled 6">
+                    <div class="gallery-overlay">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gallery-lightbox" class="lightbox">
+            <span class="close-lightbox" onclick="closeGalleryLightbox()">&times;</span>
+            <a class="prev" onclick="changeGalleryImage(-1)">&#10094;</a>
+            <div class="lightbox-content">
+                <img id="gallery-lightbox-img" src="">
+            </div>
+            <a class="next" onclick="changeGalleryImage(1)">&#10095;</a>
+        </div>
+    </section>
+
+    <section class="reservation">
+        <div class="container">
+            <div class="reservation-wrapper">
+                <div class="reservation-image">
+                    <img src="restaurace2.webp" alt="Interiér restaurace">
+                </div>
+                <div class="reservation-content">
+                    <h2>Rezervujte si svůj stůl</h2>
+                    <p>Pro zajištění místa v naší restauraci doporučujeme rezervaci předem, zejména o víkendech.</p>
+                    <h3 class="phone-highlight">+420 737 385 302</h3>
+                    <a href="kontakt.html" class="btn">Kontaktovat</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">KOLOVNA</div>
+                    <p>Restaurace & Ubytování</p>
+                    <p>Dobrá 957, Frýdek-Místek, 739 51</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Rychlé odkazy</h3>
+                    <ul>
+                        <li><a href="index.html">Úvod</a></li>
+                        <li><a href="restaurace.html">Restaurace</a></li>
+                        <li><a href="nase-pizza.html">Naše pizza</a></li>
+                        <li><a href="ubytovani.html">Ubytování</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Kontakt</h3>
+                    <p><i class="fa-solid fa-phone-volume"></i> +420 737 385 302</p>
+                    <p><i class="fa-solid fa-envelope"></i> kolovnadobra@gmail.com</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/people/Kolovna-Dobrá/100063963724197/" target="_blank">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-banner">
+                    <a href="https://www.muzeum-meteoritu.cz/muzeum/" target="_blank">
+                      <img src="banner.webp" alt="Muzeum meteoritů" width="500" height="300">
+                    </a>
+                  </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Kolovna - Restaurace & Ubytování. Všechna práva vyhrazena.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const galleryLightbox = document.getElementById('gallery-lightbox');
+const galleryLightboxImg = document.getElementById('gallery-lightbox-img');
+const galleryImages = [
+    'restaurace.webp',
+    'restaurace2.webp',
+    'restaurace3.webp',
+    'restaurace4.webp',
+    'restaurace5.webp',
+    'restaurace6.webp'
+];
+let currentGalleryIndex = 0;
+
+function openGalleryLightbox(index) {
+    galleryLightbox.style.display = 'flex';
+    currentGalleryIndex = index;
+    galleryLightboxImg.src = galleryImages[index];
+    document.body.style.overflow = 'hidden';
+}
+
+function closeGalleryLightbox() {
+    galleryLightbox.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+function changeGalleryImage(direction) {
+    currentGalleryIndex += direction;
+
+    if (currentGalleryIndex >= galleryImages.length) {
+        currentGalleryIndex = 0;
+    } else if (currentGalleryIndex < 0) {
+        currentGalleryIndex = galleryImages.length - 1;
+    }
+
+    galleryLightboxImg.src = galleryImages[currentGalleryIndex];
+}
+
+galleryLightbox.addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeGalleryLightbox();
+    }
+});
+    </script>
+    <script src="navbar.js"></script>
+    <script src="animations.js"></script>
+    <script src="book.js"></script>
+</body>
+</html>
